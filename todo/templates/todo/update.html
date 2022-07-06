@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!-- Plantilla para editar las tareas y eliminarlas-->
+
+{% block content %}
+
+    <form class="update" method="POST">
+        {% block header %}
+            <h1>{% block title %}Editar: {{ todo['description'] }}{% endblock %}</h1>
+        {% endblock %}
+        <br>
+        <label for="description">Nueva Descripción</label><br>
+        <input type="text" name="description" id="description" value="{{ request.form['description'] or todo['description'] }}" required><br>
+        <label for="completed">Tarea Completada: </label>
+        <input type="checkbox" name="completed" id="completed" {% if todo['completed'] == 1 %}checked{% endif%}> <br>
+        <input type="submit" value="Guardar"> 
+    </form>
+    <form action="{{ url_for('todo.delete', id=todo['id']) }}" method="POST">
+        <div class="delete">
+            <img src="{{ url_for('static', filename='./img/contenedor-de-basura.png') }}" width="30px" height="30px">
+            <input type="submit"  class="danger" value="Eliminar" onclick="return confirm('¿Estas seguro de querer eliminar esta tarea?')">
+        </div>
+        
+    </form>
+
+{% endblock %}
+

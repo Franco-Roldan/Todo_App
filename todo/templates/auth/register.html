@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <form method="POST">
+        {% block header %}
+            <h1>{% block title %}Registro{% endblock %}</h1>
+        {% endblock %}
+        <label for="username">Username</label>
+        <div>
+            <img src="{{ url_for('static', filename='./img/usuario.png') }}" width="28px" height="28px" >
+            <input type="text" name="username" id="username" required><br>
+        </div>
+        <label for="password">Password</label><br>
+        <div>
+            <img src="{{ url_for('static', filename='./img/candado.png') }}" width="28px" height="28px" >
+            <input type="password"  name="password" id="password" required><br>
+        </div>
+        <input type="submit" value="Registrarse">
+    </form>
+{% endblock %}
+
+{% block navegacion %}
+    <div class="opcion" > 
+        <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>            
+    </div>
+    
+{% endblock %}
