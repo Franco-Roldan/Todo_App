@@ -4,43 +4,30 @@
 {% block content %}
     {% block header %}
         <h1 class="title">{% block title %} Mis Tareas {% endblock %}</h1>
-        {% if g,user %}
-            <div class="nuevatarea" >
-                <img src="{{url_for('static', filename='./img/portapapeles.png')}}" width="20px" height="20px">
-                <a class="action" href="{{ url_for('todo.create') }}">Nueva Tarea</a>
-            </div>
-
+        {% if g,user %} 
+            <a class="action" href="{{ url_for('todo.create') }}"><img src="{{url_for('static', filename='./img/agregar.png')}}" width="30px" height="30px"> Nueva Tarea</a>
         {% endif %}
 
     {% endblock %}
     
-    
-    <div class="titlelist"><h2>Lista</h2></div>
     <ul>
         {% for todo in todos %}
             <li class="tarea" type="none">
                 <div>
-                    <h1>
+                    <h3>
                         {% if todo["completed"] == 1 %}
-                            <strike>{{ todo["description"] }}</strike>
+                           <span>✅ <s>{{ todo["description"] }}</s> </span> 
                         {% else %}
-                            {{ todo["description"] }}
+                           <span>🔳 {{ todo["description"] }}</span> 
                         {% endif %}
-                    </h1>
+                    </h3>
                     <div class="about">{{ todo["created_at"].strftime("%d-%m-%Y") }}</div>
-                    <a class="action" href="{{ url_for('todo.update', id=todo['id']) }}">  
-                        <img src="{{url_for('static', filename='./img/editar.png')}}" width="20px" height="20px">
-                        Editar</a>
+                    <a class="editar" href="{{ url_for('todo.update', id=todo['id']) }}"><img src="{{url_for('static', filename='./img/editar.png')}}" width="30px" height="30px"></a>
                 </div>
             </li>
             {% if not loop.last %}
-                <hr>
             {% endif %}
         {% endfor %}
-    </ul>   
-{% endblock %}
-{% block navegacion %}
-    <div class="opcion" > 
-        <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>                
-    </div>
+    </ul>  
+    
 {% endblock %}

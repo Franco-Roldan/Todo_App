@@ -3,6 +3,10 @@
 
 
 {% block content %}
+    <div>
+        <a class="volver" href="{{ url_for('todo.index') }}"><img src="{{url_for('static', filename='./img/flecha-izquierda.png')}}" width="20" height="20"></a>
+    </div>
+
     <form class="create" method="POST">
         {% block header %}
             <h1>{% block title %}Crear Tarea{% endblock %}</h1>

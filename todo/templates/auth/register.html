@@ -1,30 +1,45 @@
-{% extends "base.html" %}
-
-
-
-{% block content %}
-
-    <form method="POST">
-        {% block header %}
-            <h1>{% block title %}Registro{% endblock %}</h1>
-        {% endblock %}
-        <label for="username">Username</label>
-        <div>
-            <img src="{{ url_for('static', filename='./img/usuario.png') }}" width="28px" height="28px" >
-            <input type="text" name="username" id="username" required><br>
-        </div>
-        <label for="password">Password</label><br>
-        <div>
-            <img src="{{ url_for('static', filename='./img/candado.png') }}" width="28px" height="28px" >
-            <input type="password"  name="password" id="password" required><br>
-        </div>
-        <input type="submit" value="Registrarse">
-    </form>
-{% endblock %}
-
-{% block navegacion %}
-    <div class="opcion" > 
-        <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>            
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_auth.css') }}">
+    <title>Registrarse - Todo list</title>
+</head>
+<body>
+    <div class="form">
+        <form method="POST">
+            <h3>Registrarse</h3><hr>
+            <label for="username">Username</label>
+            <div class="div-input">
+                <img src="{{ url_for('static', filename='./img/usuario.png') }}" width="30px" height="30px" >
+                <input type="text" name="username" id="username" required><br>
+            </div>
+            <label for="password">Password</label><br>
+            <div class="div-input">
+                <img src="{{ url_for('static', filename='./img/candado.png') }}" width="30px" height="30px" >
+                <input type="password"  name="password" id="password" required><br>
+            </div>
+            <div class="div-input">
+                <input type="submit" value="Registrarse">
+            </div>
+        </form>
     </div>
+
+
+    <div class="opcion" > 
+        <p><a href="{{ url_for('auth.login') }}">Iniciar Sesión</a></p>            
+    </div>
+</body>
+</html>
+
+
+
+
+
+
     
-{% endblock %}

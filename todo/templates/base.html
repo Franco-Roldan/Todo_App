@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <title>{% block title %} {% endblock %} - Todo list</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     
     <header>
-        <h1>Lista de Tareas</h1>
+        <h1>Lista de Tareas 📝</h1>
+        <div class="opcion" > 
+            <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>                
+        </div>
     </header>
 
     <section>
         {% if g.user %}
             <div class="user">
-                <img src="{{ url_for('static', filename='./img/perfil.png') }}">
-                <span>{{ g.user["username"] }}</span>
+                <h3>{{ g.user["username"] }}</h3>
+                <img src="{{url_for('static', filename='./img/perfil.png')}}" width="80px" height="80px">
             </div>
+            
         {% endif %}
-        
         <div class="content accion" >
             <div>
-                {% for message in get_flashed_messages() %}
-                    <div class="flash">{{ message }}</div>
-                {% endfor %}
-
-
                 {% block content %}
                     {% if  g.user %}
                     
@@ -38,10 +36,6 @@
     
                 {% endblock %}
             </div>   
-            {% block navegacion %}
-            
-            {% endblock %}
-            
         </div>    
         
     </section>

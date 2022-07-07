@@ -1,3 +1,4 @@
+# modulo de tareas
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
@@ -7,7 +8,7 @@ from todo.db import get_db
 
 bp = Blueprint("todo",__name__)
 
-@bp.route("/")
+@bp.route("/")#raiz
 @login_required
 def index():
     db, c = get_db()
@@ -18,7 +19,7 @@ def index():
 
     return render_template("todo/index.html", todos=todos)
 
-@bp.route("/create", methods=["GET", "POST"])
+@bp.route("/create", methods=["GET", "POST"])#crear tarea
 @login_required
 def create():
     if request.method == "POST":

@@ -3,23 +3,24 @@
 <!-- Plantilla para editar las tareas y eliminarlas-->
 
 {% block content %}
-
+    <div>
+        <a class="volver" href="{{ url_for('todo.index') }}"><img src="{{url_for('static', filename='./img/flecha-izquierda.png')}}" width="20" height="20"></a>
+    </div>
     <form class="update" method="POST">
         {% block header %}
             <h1>{% block title %}Editar: {{ todo['description'] }}{% endblock %}</h1>
         {% endblock %}
-        <br>
-        <label for="description">Nueva Descripción</label><br>
+        <label for="description">Nueva Descripción</label>
         <input type="text" name="description" id="description" value="{{ request.form['description'] or todo['description'] }}" required><br>
         <label for="completed">Tarea Completada: </label>
         <input type="checkbox" name="completed" id="completed" {% if todo['completed'] == 1 %}checked{% endif%}> <br>
         <input type="submit" value="Guardar"> 
     </form>
-    <form action="{{ url_for('todo.delete', id=todo['id']) }}" method="POST">
-        <div class="delete">
-            <img src="{{ url_for('static', filename='./img/contenedor-de-basura.png') }}" width="30px" height="30px">
-            <input type="submit"  class="danger" value="Eliminar" onclick="return confirm('¿Estas seguro de querer eliminar esta tarea?')">
-        </div>
+    <form class="delete" action="{{ url_for('todo.delete', id=todo['id']) }}" method="POST">
+        <h1>Eliminar tarea: </h1>
+        
+        <input type="submit"  class="danger" value="Eliminar" onclick="return confirm('¿Estas seguro de querer eliminar esta tarea?')">
+       
         
     </form>
 

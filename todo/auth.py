@@ -1,3 +1,4 @@
+# Modulo de autenticación
 import functools
 from flask import (
     Blueprint, flash, g, render_template, request, url_for, session, redirect
@@ -10,7 +11,7 @@ from todo.db import get_db
 bp = Blueprint("auth", __name__, url_prefix= "/auth")
 
 @bp.route("/register", methods=["GET", "POST"])
-def register():
+def register(): #registrarse
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -37,7 +38,7 @@ def register():
 
 
 @bp.route("/login", methods= ["GET", "POST"])
-def login():
+def login(): #iniciar sesion
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]

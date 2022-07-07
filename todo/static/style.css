@@ -1,16 +1,36 @@
 body{
-    background-color: #78909C;
+    background-color: #4D505F;
     margin: 0px;
-    font-size:'Assistant', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    
 }
 header{
     display: block;
-    background: #37474F;
+    background: #353741;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0px;
-    padding: 20px 20px 20px 80px ;
+    padding: 20px 30px 20px 50px ;
     max-width: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.7);
     color: white;
+}
+header .opcion a{
+    background-color: #7CB342;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+    width: 280px;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    position: relative;
+    top:80%;
+}
+header .opcion a:hover{
+    background-color: #33CC00;
 }
 section{
     min-height: calc(100vh - 120px - 85px);
@@ -18,236 +38,196 @@ section{
 section .user{
     display: flex;
     align-items: center;
-    background-color:#607D8B ;
-    padding: 5px 0px 5px 0px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: end;
+    background-color: #4D505F;
+    padding: 0;
 }
 section .user img{
-    background-color: #EF6C00;
     width: 50px;
     height: 50px;
     color: black;
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 50%;
-    border: solid 1px black;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .content .flash{
     background-color: #CFD8DC;
     padding-left: 20px;
     color: red;
 }
-.content .nuevatarea{
-    display: flex;
-    align-items: center;
+.content .action{
     margin-left: 30px;
-}
-.content .nuevatarea a{
-    background-color: #b9c9d1;
-    text-decoration:solid;
+    background-color:#7CB342;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+    width: 120px;
     color: black;
-    padding: 6px ;
-    border-radius: 0px 8px 8px 0px;
-}
-.content .nuevatarea img{
-    padding: 5px;
-    background-color: #48606c ;
-    border-radius: 8px 0px 0px 8px;
-}
-.content .nuevatarea a:hover{
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-}
-
-.content form {
-    margin: 30px 0px 0px 30px;
-    background-color: #869ba6;
-    text-align: center;
-    font-size: 20px;
-    max-width: 300px;
-    border-radius: 10px;
-    font-family: sans-serif;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-decoration: none;
    
 }
-.content form h1{
-    background-color: #37474F ;
-    margin: 0px;
-    padding: 5px;
-    border-radius: 10px 10px 0px 0px;
-    font-size: 20px;
-    color: white;
+.content .action:hover{
+    background-color: #33CC00;
 }
-.content form label{
-    font-size: medium;
-
-}
-.content form div{
+.content .volver{
+    margin-left: 30px;
+    background-color:#7CB342;
+    transition: background-color 0.5s ease;
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-.content form div input{
+    align-items: center;
+    width: 30px;
     padding: 5px;
-    margin: 5px 5px 5px 0px;
-    color: white;
-    border:solid 1px #37474F;
-    border-left: none;
-    outline: none;
-    text-align: center;
-    border-radius: 0px 20px 20px 0px;
-    background-color:#607D8B;
-    font-size: medium;
+    border-radius: 30px;
 }
-.content form div img{
-    background-color: #607D8B;
-    border: solid 1px #37474F;
-    border-left: none;
-    border-right: none;
-    border-radius: 20px 0px 0px 20px;
+.content .volver:hover{
+    background-color: #33CC00;
+}
+/*-------- create -------*/
+.content  .create{
+    margin-left: 30px;
 
-}
-.content form input[type=submit]{
-    background-color: #37474F;
-    border-radius: 4px;
-    padding: 10px;
-    cursor:overlay;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    color: white;
-    border: none;
-}
-.content form input[type=submit]:hover{
-    cursor:pointer;
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-}
-.content form input[type=checkbox]{
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top:5px;
-}
-.content form .delete{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.content form .delete input{
-    margin-bottom: 10px;
-    font-size: medium;
-}
-.content form .delete img{
-    margin: 0px 20px 0px 0px;
-    border-radius: 10px;
-    padding: 3px;
 }
 .content .create input{
-    padding: 5px;
-    margin: 5px 5px 5px 0px;
-    color: white;
-    border:solid 1px #37474F;
-    outline: none;
-    text-align: center;
-    border-radius: 20px;
-    background-color:#607D8B;
+    font-family: 'Raleway', sans-serif;
     font-size: medium;
+    height: 30px;
+    width: 250px;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
+.content .create input[type=submit]{
+    background-color: #7CB342;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100px;
+}
+.content .create input[type=submit]:hover{
+    background-color: #33CC00;
+}
+/*------- update ------*/
+.content .update{
+    margin-left: 30px;
 
+}
+.content .update input{
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    height: 30px;
+    width: 250px;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+.content .update input[type=checkbox]{
+    box-shadow: none;
+    width: 50px;
+    position: relative;
+    top:10px;
+}
+.content .update input[type=submit]{
+    background-color: #7CB342;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100px;
+}
+.content .update input[type=submit]:hover{
+    background-color: #33CC00;
+}
+/*----- delete -----*/
+.content .delete{
+    margin-left: 30px;
+
+}
+.content .delete input{
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #7CB342;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+.content .delete input[type=submit]:hover{
+    background-color: #33CC00;
+}
 .content .title{
     display: flex;
     margin-left: 30px;
 }
-
-.content .titlelist{
-    background-color: #37474F;
-    padding: 10px 0px 10px 0px ;
-    margin: 20px 20px 0px 20px;
-    text-align: center;
-    color: white;
-    border-radius: 10px 10px 0px 0px;
-}
-.content .titlelist h2{
-    margin: 0px;
-}
 .content ul{
-    background-color: white;
-    margin: 0px 20px 20px 20px;
-    border-radius: 0px 0px 10px 10px;
-    padding: 5px 5px 5px 20px;
+    padding: 0;
 }
-
 .content .tarea{
     background-color: #eee;
-    border-radius: 10px; 
+    border-radius: 30px; 
     margin: 5px 10px 5px 10px; 
-    
+    margin-left: 30px;
+    margin-right: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 .content .tarea div{
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content:space-evenly;
     
 }
-.content .tarea h1{
+.content .tarea h3{
     display: flex;
-    width: 300px;
+    width: 450px;
 }
-.content ul  a{
+.content .editar{
+    margin-left: 30px;
+    background-color:#7CB342;
     display: flex;
-    text-decoration: none;
-    color: black;
-    background-color: #b9c9d1;
+    justify-content: center;
     align-items: center;
-    padding-right: 5px;
-    border-radius: 8px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-size: 14px;
+    width:50px;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-decoration: none;
 }
-.content ul a img{
-   background-color: #48606c;
-   padding: 10px;
-   margin-right: 5px;
-   border-radius: 8px 0px 0px 8px;
-}
-.content ul  a:hover{
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-}
-.content ul hr{
-    margin: 0px auto 0px auto;
-    width: 90%;
+.content .editar:hover{
+    background-color: #33CC00;
 }
 .content .opcion{
    margin: 30px ; 
 }
-
-.content .opcion a{
-    padding: 10px;
-    background-color:#4e5e66 ;
-    color: white;
-    text-decoration: none;
-    font-size: larger;
-    border-radius: 8px;
-
-}
-.content .opcion a:hover{
-   box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
-}
-.content .update input{
-    padding: 5px;
-    margin: 5px 5px 5px 0px;
-    color: white;
-    border:solid 1px #37474F;
-    outline: none;
-    text-align: center;
-    border-radius: 20px;
-    background-color:#607D8B ;
-    font-size: medium;
-}
-
 footer{
     margin: 0px;
+    position: relative;
+    font-size: small;
+    top:24px;
     background-color: black;
     color: white;
     text-align: center;
-    padding: 30px 0px 37px 0px;
+    padding: 20px 0px 20px 0px;
     
 }
 footer p{
