@@ -10,6 +10,10 @@ from todo.db import get_db
 
 bp = Blueprint("auth", __name__, url_prefix= "/auth")
 
+@bp.route("/home", methods=["GET"])
+def home():
+    return render_template("auth/presentation.html")
+
 @bp.route("/register", methods=["GET", "POST"])
 def register(): #registrarse
     if request.method == "POST":
@@ -77,7 +81,7 @@ def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for("auth.login"))
+            return redirect(url_for("auth.home"))
 
         return view(**kwargs)
     return wrapped_view
@@ -86,4 +90,4 @@ def login_required(view):
 @bp.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("auth.home"))
