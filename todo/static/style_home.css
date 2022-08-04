@@ -1,8 +1,8 @@
 body{
-    font-family: 'Sriracha', cursive;
     background-color: #4D505F;
     margin: 0;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +32,17 @@ nav a:hover{
     justify-content: space-evenly;
     align-items: center;
 }
+.text h1{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+    color:#8BC34A;
+    text-shadow: 0.1em 0.1em 0.2em #222;    
+}
+.text p{
+    color:#aaa;
+    width: 550px;
+    text-align: justify;
+}
 .text{
     animation: entrada
                     .8s ease;
@@ -40,12 +51,7 @@ nav a:hover{
     animation: entradaimg
                     .8s ease;
 }
-.home h1{
-    color: #8BC34A;
-    width: 300px;
-    margin-top: 0;
 
-}
 footer{
     margin: 0;
     padding-top: 5px;
@@ -71,5 +77,35 @@ footer{
     }
     to{
         transform: translateY(0);
+    }
+}
+@media (max-width: 768px){
+
+    nav{
+        justify-content: center;
+    }
+    .home{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .text, .img{
+        margin-bottom: 30px;
+        width:100%;
+        animation: none;
+    }
+    .img img{
+        width: 100%;
+    }
+    .text h1{
+        margin:0;
+        margin-bottom: 30px;
+        text-align: center;
+        width:100%;
+    }
+    .text p{
+        width: auto;
+        margin: 0 10px 0 10px;
     }
 }

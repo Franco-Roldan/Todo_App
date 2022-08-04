@@ -229,7 +229,6 @@ footer{
     color: white;
     text-align: center;
     padding: 20px 0px 20px 0px;
-    
 }
 footer p{
     margin: 0px;
@@ -238,13 +237,23 @@ footer a{
     color: white;
 }
 
-@media (max-width: 700px){
+@media (max-width: 768px){
+    body{
+        font-size: small;
+    }
     header{
         display: flex;
         justify-content: center;
+        
+    }
+    header .opcion a{
+        display: none;
     }
     section .user{
-        flex-direction: column;
+        display: none;
+    }
+    .content{
+        margin-top: 20px;
     }
     .content .title{
         justify-content: center;
@@ -253,8 +262,33 @@ footer a{
         display: flex;
         justify-content: center;
     }
-    /*.content form{
-        padding: 20px;
-    } */   
+    .content .tarea{
+        width: 100%;
+        margin: 0;
+        margin-bottom:10px;
+        border-radius: 0;
+        font-size: medium;
+    }
+    .content .tarea div{
+        font-size: small;
+        justify-content: space-around;
+    }
+    .content .tarea div h3{
+        width: 250px;
+    }
+    .content .tarea .about{
+        display: none;
+    }
+    .content .create{
+        margin: 0;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        font-size: large;
+    }
+    .content .create input{
+        width: 90%;
+    }
 }
-

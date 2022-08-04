@@ -13,7 +13,6 @@ h3{
     margin-bottom: 20px;
 }
 .form{
-    
     background-color: #aaa;
     width: 450px;
     margin-left: auto;
@@ -72,4 +71,29 @@ input[type=submit]:hover{
     margin-top: 10px;
     width: 400px;
     text-align: center;
+}
+
+@media (max-width:768px){
+
+    body{
+        width: auto;
+        font-size: large;
+    }
+    .form{
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+    }
+    form{
+        padding: 20px 0 20px 0;
+    }
+    .div-input{
+        width: 90%;
+    }
+    input{
+        width:90%;
+    }
+    .opcion{
+        width: 100%;
+    }
 }
