@@ -7,10 +7,10 @@ def create_app():
     app.config.from_mapping(
         SECRET_KEY=os.environ.get('SECRET_KEY'),
         DATABASE_HOST=os.environ.get('FLASK_DATABASE_HOST'),
-        DATABASE_PORT = os.environ.get('FLASK_DATABASE_PORT'),
         DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
         DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
-        DATABASE=os.environ.get('FLASK_DATABASE')
+        DATABASE=os.environ.get('FLASK_DATABASE'), 
+        DATABASE_PORT = os.environ.get('FLASK_DATABASE_PORT')
     )
     from . import db
    
