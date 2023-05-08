@@ -8,10 +8,10 @@ def get_db(): #esta funcion nos conecta a la base de datos y nos devuelve basede
     if "db" not in g:
         g.db = mysql.connector.connect(
             host = current_app.config["DATABASE_HOST"],
-            port = current_app.config["DATABASE_PORT"],
             user = current_app.config["DATABASE_USER"],
             password = current_app.config["DATABASE_PASSWORD"],
-            database = current_app.config["DATABASE"]
+            database = current_app.config["DATABASE"], 
+            port = "7891"
         )
         g.c = g.db.cursor(dictionary=True)
     return g.db, g.c
