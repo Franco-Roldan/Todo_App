@@ -18,8 +18,7 @@ instructions= [
             created_by INT NOT NULL,
             created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             description TEXT NOT NULL,
-            completed BOOLEAN NOT NULL,
-            FOREIGN KEY (created_by) REFERENCES user (id)
+            completed BOOLEAN NOT NULL
         );
     """
 

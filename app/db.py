@@ -7,16 +7,14 @@ from .schema import instructions # es un archivo
 def get_db(): #esta funcion nos conecta a la base de datos y nos devuelve basededatos y el cursor para ejecutar consultas.
     if "db" not in g:
         g.db = mysql.connector.connect(
-            # host = current_app.config["DATABASE_HOST"],
-            # user = current_app.config["DATABASE_USER"],
-            # password = current_app.config["DATABASE_PASSWORD"],
-            # database = current_app.config["DATABASE"], 
-            # port = current_app.config["DATABASE_PORT"]
-            host= "containers-us-west-202.railway.app",
-            user= "root",
-            password= "QCOxWeyWZirsgzoInoYY",
-            database= "railway",
-            port= "7891"
+            host = current_app.config["DATABASE_HOST"],
+            user = current_app.config["DATABASE_USER"],
+            password = current_app.config["DATABASE_PASSWORD"],
+            database = current_app.config["DATABASE"], 
+            # host= "aws.connect.psdb.cloud",
+            # user= "ouw75yv9l5rk9oyujyvp",
+            # password= "pscale_pw_CyyAZK2JGuByoTz3uwwuCZSXt91IURKgk8GHLJfURNb",
+            # database= "database_franco"
         )
         g.c = g.db.cursor(dictionary=True)
     return g.db, g.c
