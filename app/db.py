@@ -11,6 +11,7 @@ def get_db(): #esta funcion nos conecta a la base de datos y nos devuelve basede
             user = current_app.config["DATABASE_USER"],
             password = current_app.config["DATABASE_PASSWORD"],
             database = current_app.config["DATABASE"], 
+            #port = current_app.config("DATABASE_PORT")
             # host= "aws.connect.psdb.cloud",
             # user= "ouw75yv9l5rk9oyujyvp",
             # password= "pscale_pw_CyyAZK2JGuByoTz3uwwuCZSXt91IURKgk8GHLJfURNb",
