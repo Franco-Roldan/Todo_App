@@ -49,16 +49,3 @@ def init_app(app):# esta le permite a la aplicacion cerrar la db una ves termina
 
 
 
-
-# FLASK_DATABASE_HOST= aws.connect.psdb.cloud
-# FLASK_DATABASE_PASSWORD= pscale_pw_KravO3zpuZOMEf1JRczAO2qhF5QSQeiEyyIcAmSKKgp
-# FLASK_DATABASE_USER= kohp8haexzms0iz4q2hz
-# FLASK_DATABASE= database_franco
-# FLASK_DATABASE_PORT = 3306
-# SECRET_KEY= messi_es_eterno
-
-
-
-
-
-
