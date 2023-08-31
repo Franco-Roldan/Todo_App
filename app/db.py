@@ -11,11 +11,7 @@ def get_db(): #esta funcion nos conecta a la base de datos y nos devuelve basede
             user = current_app.config["DATABASE_USER"],
             password = current_app.config["DATABASE_PASSWORD"],
             database = current_app.config["DATABASE"], 
-            #port = current_app.config("DATABASE_PORT")
-            # host= "aws.connect.psdb.cloud",
-            # user= "ouw75yv9l5rk9oyujyvp",
-            # password= "pscale_pw_CyyAZK2JGuByoTz3uwwuCZSXt91IURKgk8GHLJfURNb",
-            # database= "database_franco"
+            port = 3306
         )
         g.c = g.db.cursor(dictionary=True)
     return g.db, g.c
@@ -54,7 +50,12 @@ def init_app(app):# esta le permite a la aplicacion cerrar la db una ves termina
 
 
 
-
+# FLASK_DATABASE_HOST= aws.connect.psdb.cloud
+# FLASK_DATABASE_PASSWORD= pscale_pw_KravO3zpuZOMEf1JRczAO2qhF5QSQeiEyyIcAmSKKgp
+# FLASK_DATABASE_USER= kohp8haexzms0iz4q2hz
+# FLASK_DATABASE= database_franco
+# FLASK_DATABASE_PORT = 3306
+# SECRET_KEY= messi_es_eterno
 
 
 
